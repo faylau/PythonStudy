@@ -71,7 +71,7 @@ class Sort(object):
         size = len(arr)
         # 有 n 个元素，一共需要比较 n-1 轮
         for i in range(1, size):
-            # 在第 m 轮比较中，一共有 n-m 个元素需要进行比较，之间比较 n-m-1 次。
+            # 在第 i 轮比较中，一共有 size-i 个元素需要进行比较，之间比较 size-i-1 次。
             for j in range(0, size-i):
                 if arr[j] > arr[j+1]:
                     arr[j], arr[j+1] = arr[j+1], arr[j]
@@ -114,7 +114,6 @@ class Sort(object):
         @param arr: 待排序的列表
         @param left: 列表左边界下标
         @param right: 列表右边界下标
-        @param basic: 基准数据pivot的下标，缺省为0（队列的第一个数）
         @return: 排序之后的列表
         '''
         if (left < right):
@@ -176,6 +175,3 @@ if __name__=="__main__":
 #     final_arr = sort.quick_sort_1(init_arr)
     final_arr = sort.shell_sort(init_arr)
     print 'After: %s' % final_arr
-    
-        
-        
