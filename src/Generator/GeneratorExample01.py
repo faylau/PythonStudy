@@ -27,6 +27,7 @@ def simple_generator():
 
 if __name__=="__main__":
 	# Example01_Run01
+	print "------Example01_Run01-------"
 	for value in simple_generator():
 		print value
 
