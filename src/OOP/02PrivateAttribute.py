@@ -41,4 +41,3 @@ if __name__ == "__main__":
     p.func()
     p.__func()                  # 无法在类外部访问private的方法
     p._Parent__func()           # 同上，类中的私有方法，实际上也可通过 instance._ClassName__func()的方式访问。
-    

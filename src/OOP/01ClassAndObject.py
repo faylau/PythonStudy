@@ -50,22 +50,17 @@ class SubMethodTest(MethodTest):
         
 if __name__ == "__main__":
     # 01ClassAndObject_Example1.1------------------------------------------------------------------
+    print "------------------01ClassAndObject_Example1.1------------------"
     # 调用实例方法（只能通过实例调用）
-#     mt = MethodTest()
-#     mt.method_add()
-    # 调用静态方法（只能通过类名调用）
-#     MethodTest.static_method_add()
+    mt = MethodTest()
+    mt.method_add()
+    # 调用静态方法（既可通过类名，也可通过实例调用）
+    MethodTest.static_method_add()
+    mt.static_method_add()
     # 调用类方法（既可通过类名，也可通过实例调用）
-#     MethodTest.class_method_add()
-#     mt.class_method_add()
+    MethodTest.class_method_add()
+    mt.class_method_add()
     # 类方法与静态方法的区别（（3）和（4））
     smt = SubMethodTest()
     smt.static_method_add()
     smt.class_method_add()
-    #----------------------------------------------------------------------------------------------
-    # 01ClassAndObject_Example2.1------------------------------------------------------------------
-#     print Parent._Parent__a
-#     p = Parent()
-#     p.func()
-#     p.__func()
-    
