@@ -164,9 +164,39 @@ class Sort(object):
             d = d/2  
         return arr
 
+class Search(object):
+    '''
+    @summary: 各种常见查找算法实现
+    '''
+    def __init__(self):
+        pass
+
+    def binary_search(self, sorted_arr, item):
+        '''
+        @summary: 二分法查找
+        @param: sorted_arr：要查找的列表；
+        @param: item: 要查找的元素
+        @return: 查找结果：（1）-1：表示该元素不存在；（2）元素所在位置的下标；（3）False当sorted_arr为空。
+        '''
+        if not sorted_arr:
+            return False
+        start = 0
+        end = len(sorted_arr) - 1
+        middle = (start + end) / 2
+        while start <= end:
+            if sorted_arr[middle] == item:
+                return middle
+            elif sorted_arr[middle] < item:
+                start = middle + 1
+            else:
+                end = middle - 1
+            middle = (start + end) / 2
+        return -1
+
 if __name__=="__main__":
     sort = Sort()
     init_arr = getrandata(10)
+    item = init_arr[random.randint(0,9)]
     print 'Before: %s' % init_arr
 #     final_arr = sort.bubble_sort(init_arr)
 #     final_arr = sort.select_sort(init_arr)
@@ -175,3 +205,4 @@ if __name__=="__main__":
 #     final_arr = sort.quick_sort_1(init_arr)
     final_arr = sort.shell_sort(init_arr)
     print 'After: %s' % final_arr
+    print 'The index of %s is: %d' % (item, Search().binary_search(final_arr, item))
