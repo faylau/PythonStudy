@@ -2,9 +2,10 @@
 # encoding:utf-8
 
 
-__authors__ = ['"Liu Fei" <liufei82@163.com>']
+__authors__ = ['"Liu Fei" <liufei83@163.com>']
 __version__ = "V0.1"
 
+import functools
 
 '''
 1.关于Decorator，这里并没有做特别详细和深入的讲解，只是给了一些常规的Decorator用法；
@@ -29,6 +30,7 @@ Example-01：最基本的Decorator（装饰器）
 -------------------------------------------------------------------------------------------------------'''
 
 def hello1(fn):
+    @functools.wraps(fn)
     def wrapper():
         print "Hello function '%s'." % fn.__name__
         fn()
@@ -165,9 +167,10 @@ def foo5():
     
 
 if __name__ == '__main__':
-    # foo1()
+    print foo1()
+    print foo1.__doc__
     # foo2(1, 2)
     # foo3(1, 2)
     # foo3_1(1, 2, 3)
     # foo4()
-    foo5()
+    # foo5()
